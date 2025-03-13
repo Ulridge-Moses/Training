@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float Example</title>
+    <style>
+        .container {
+            width: 500px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .image {
+            float: left; /* Floats image to the left */
+            margin-right: 10px; /* Adds space between image and text */
+            width: 150px;
+        }
+
+        .text {
+            font-size: 16px;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <img src="/csssandbox_finished/img/leaf.png" alt="Example Image" class="image">
+        <p class="text">
+            This is an example of using the float property. The image floats to the left, and the text wraps around it. This is useful when you want an image or element to sit within a paragraph without disrupting the flow of the content.
+        </p>
+    </div>
+</body>
+</html>

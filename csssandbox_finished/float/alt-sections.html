@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternating Float Layout</title>
+    <style>
+        * {
+            margin-top: 30px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .section {
+            padding: 20px;
+            overflow: hidden; /* Prevents float issues */
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        .section img {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Alternating float */
+        .left {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .right {
+            float: right;
+            margin-left: 20px;
+        }
+
+        .text {
+            overflow: hidden; /* Prevents text from wrapping under the image */
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section clearfix">
+            <img src="/csssandbox_finished/img/leaf.png" alt="Image 1" class="left">
+            <div class="text">
+                <h2>Section 1</h2>
+                <p>This section has the image floated to the left and text wrapping around it.</p>
+            </div>
+        </div>
+
+        <div class="section clearfix">
+            <img src="/csssandbox_finished/img/leaf.png" alt="Image 2" class="right">
+            <div class="text">
+                <h2>Section 2</h2>
+                <p>This section has the image floated to the right and text wrapping around it.</p>
+            </div>
+        </div>
+
+        <div class="section clearfix">
+            <img src="/csssandbox_finished/img/leaf.png" alt="Image 3" class="left">
+            <div class="text">
+                <h2>Section 3</h2>
+                <p>This section has the image floated to the left again.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
